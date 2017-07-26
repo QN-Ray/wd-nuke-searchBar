@@ -1,0 +1,38 @@
+{
+  "extends": "eslint-config-ali/react",
+  "globals": {
+    "it": true,
+    "describe": true,
+    "require": true,
+    "process": true,
+    "before": true,
+    "after": true,
+    "beforeEach": true,
+    "afterEach": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "strict": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/forbid-prop-types":"off",
+    "new-cap": "off",
+    "react/no-string-refs":"off",
+    "max-len":"off",
+    "no-console": "off",
+    "react/prefer-stateless-function": ["off", {"ignorePureComponents": true}],
+    "no-unused-vars": [
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        "varsIgnorePattern": "createElement"
+      }
+    ],
+    "class-methods-use-this": "off"
+  },
+  "parser": "babel-eslint"
+}

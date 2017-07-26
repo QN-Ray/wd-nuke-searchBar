@@ -1,0 +1,45 @@
+{
+    "name": "wd-nuke-searchbar",
+    "description": "searchbar",
+    "version": "0.0.1",
+    "keywords": [
+        "nuke",
+        "mobile"
+    ],
+    "main": "lib/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git@github.com:QN-Ray/wd-nuke-searchBar.git"
+    },
+    "author": {
+        "name": "xiaoqiang730730",
+        "email": "838871837@qq.com"
+    },
+    "tnpm": {
+        "mode": "npminstall"
+    },
+    "peerDependency": {
+        "nuke": "*"
+    },
+    "readmeFilename": "README.md",
+    "devDependencies": {
+        "babel-eslint": "*",
+        "eslint": "3.x",
+        "eslint-config-ali": "*",
+        "eslint-plugin-import": "*",
+        "eslint-plugin-jsx-a11y": "*",
+        "eslint-plugin-react": "*",
+        "less": "^2.7.2",
+        "less-loader": "^3.0.0",
+        "rax": "^0.2.11",
+        "rax-webpack-plugin": "^0.0.18",
+        "stylesheet-loader": "^0.2.4"
+    },
+    "files": [
+        "lib",
+        "docs",
+        "theme",
+        "README.md",
+        "HISTORY.md"
+    ]
+}

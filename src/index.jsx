@@ -28,6 +28,17 @@ class CloseIcon extends Component {
     }
 }
 
+
+class SearchBtn extends Component {
+    render() {
+        return (
+            <Touchable style={[styles.searchTextContainer, this.props.style]} onPress={this.props.onPress}>
+                <Text style={styles.searchText}>搜索</Text>
+            </Touchable>
+        );
+    }
+}
+
 class WDSearchBar extends Component {
     constructor(props) {
         super(props);
@@ -84,7 +95,6 @@ class WDSearchBar extends Component {
     }
 
     onBlur(e) {
-        this.state.showMask && this.refs.modal.hide();
         this.props.onBlur && this.props.onBlur(e.value);
     }
 
@@ -114,7 +124,7 @@ class WDSearchBar extends Component {
 
     render() {
         const {value} = this.state;
-        const {placeholder = '输入关键字', editable = true, style} = this.props;
+        const {placeholder = '输入关键字', editable = true, style, btnStyle} = this.props;
         return (
             <View style={[styles.wrapper, style]}>
                 <Input
@@ -122,9 +132,9 @@ class WDSearchBar extends Component {
                     disabled={!editable}
                     placeholder={placeholder}
                     value={value}
-                    onInput={this.onChange.bind(this)}
-                    onFocus={this.onFocus.bind(this)}
-                    onBlur={this.onBlur.bind(this)}
+                    onInput={(e)=> { this.onChange(e) }}
+                    onFocus={(e)=> { this.onFocus(e) }}
+                    onBlur={(e)=> { this.onBlur(e) }}
                     style={styles.input}
                     returnKeyType="search"
                     onReturn={()=> { this.onSubmit() }}
@@ -136,9 +146,7 @@ class WDSearchBar extends Component {
                 <Touchable style={styles.searchClose} onPress={()=> this.onClear()}>
                     <CloseIcon ref="closeIcon"/>
                 </Touchable>
-                <Touchable style={styles.searchTextContainer} onPress={()=> { this.onSubmit() } }>
-                    <Text style={styles.searchText}>搜索</Text>
-                </Touchable>
+                <SearchBtn style={btnStyle} onPress={()=> {this.onSubmit() }}/>
             </View>
         );
     }

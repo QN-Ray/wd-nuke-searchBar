@@ -12,7 +12,7 @@
 /** @jsx createElement */
 import {createElement, Component,render } from 'rax';
 import {View,Text, Page} from 'nuke';
-import SearchBar from 'wd-nuke-searchBar';
+import SearchBar from 'wd-nuke-searchbar';
 
 let App = class NukeDemoIndex extends Component {
     constructor() {
